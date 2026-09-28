@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://admin:abc1234@cluster0-hdgyo.mongodb.net/test?retryWrites=true&w=majority",
+  process.env.MONGO_URL || "mongodb://localhost:27017/test",
   { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }
 );
 
